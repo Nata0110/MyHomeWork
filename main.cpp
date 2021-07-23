@@ -1,22 +1,35 @@
 #include <iostream>
-#include <string>
 
 void print()
 {
-    std::cout <<"Hello! Who are you? "<<std::endl;
+    std::cout << "Hello. Who are you? How old are you?" << std::endl;
+}
+
+void split(std::string &answer, int &age)
+{
+    answer.erase(0, 5);
+    std::string tempAnswer;
+    tempAnswer = answer;
+    int i = tempAnswer.find(' ');
+    tempAnswer.erase(tempAnswer.begin()+i-1, tempAnswer.end());
+    int y = answer.find("I am ");
+    answer.erase(0, y + sizeof ("I am"));
+    answer.erase(answer.begin()+2, answer.end());
+    age = atoi(answer.c_str());
+    answer = tempAnswer;
 }
 
 void answer()
 {
-    std::string question;
-    int age;
-    print ();
-    std::cin >> question;
-    std::cout <<"How old are you?"<< std::endl;
-    std::cin >> age;
-    std::cout << "Hello " << question <<", " << age << " is the best age!!!"<< std::endl;
-    std::cout << "When do you learn C++" << std::endl;
-    std::cin >> question;
+    print();
+    int age = 0;
+    std::string answer;
+    getline (std::cin, answer);
+    //you have to use only answer....
+    //write code here....
+
+    split(answer, age);
+    std::cout << answer << " " << age << " is the best age!!!!!!!!!!!!!!";
 }
 
 int main()
