@@ -27,6 +27,7 @@ void answer()
     getline (std::cin, answer);
     //you have to use only answer....
     //write code here....
+    std::cin >> answer;
 
     split(answer, age);
     std::cout << answer << " " << age << " is the best age!!!!!!!!!!!!!!";
