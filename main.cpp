@@ -29,6 +29,8 @@ void answer()
     //write code here....
     std::cin >> answer;
     std::cout << age << std::endl;
+    std::cin >> age;
+
 
     split(answer, age);
     std::cout << answer << " " << age << " is the best age!!!!!!!!!!!!!!";
